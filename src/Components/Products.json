@@ -1,0 +1,33 @@
+{
+    "Products":[
+        {
+        "Name":"Apple",
+        "Price":200,
+        "Kg":1,
+        "Image":"https://img.freepik.com/fotos-premium/manzana-sobre-fondo-blanco_941526-2.jpg",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false
+    },{
+        "Name":"Orange",
+        "Price":140,
+        "Kg":1,
+        "Image":"https://th.bing.com/th/id/OIP.t5vDCTyIjVzYJWUsiIPJ0QHaHa?pid=ImgDet&w=206&h=206&c=7&dpr=1.3",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false
+          
+    },{
+        "Name":"Banana",
+        "Price":90,
+        "Kg":1,
+        "Image":"https://thumbs.dreamstime.com/b/bananas-isolated-white-background-clipping-path-picture-high-quality-62232391.jpg",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false
+    }
+]
+}
