@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { favUpdate, addUpdt, minusProducts, addProducts } from "../Redux/Slice";
+import { favUpdate, addUpdt, minusProducts, addProducts,vegaddUpdt,vegfavUpdate,vegaddProducts,vegminusProducts } from "../Redux/Slice";
 import { useNavigate } from "react-router-dom";
 
 let FavPage = () => {
@@ -24,11 +24,27 @@ let FavPage = () => {
         dispatch(addUpdt(addItems));
     };
 
+    let vegChange=(index)=>{
+            let vegaddItems=state.vegItems.map((a,b)=>{
+                return b===index ?{...a,Visible:!a.Visible}:a
+            })
+            dispatch(vegaddUpdt(vegaddItems))
+    }
+
     let favItems = (index) => {
         const updatedItems = state.Items.map((a, b) => {
             return b === index ? { ...a, IsFav: !a.IsFav } : a;
         });
         dispatch(favUpdate(updatedItems));
+    };
+    let vegfavItems=(index)=>{
+            let vegupdatedItems =state.vegItems.map((a,b)=>{
+                return b===index?{...a,IsFav:!a.IsFav}:a
+            })
+            dispatch(vegfavUpdate(vegupdatedItems))
+        }
+        let favoritePage = () => {
+            navigate('/FavPage');
     };
     let minus = (index) => {
         if (state.Items[index].Count == 1) {       
@@ -41,6 +57,18 @@ let FavPage = () => {
             dispatch(minusProducts(subPrdts));
         }
     };
+    let vegminus=(index)=>{
+            if(state.vegItems[index].Count ==1){
+                vegChange(index)
+            }
+            else{
+                let vegsubPrdts =state.vegItems.map((a,b)=>{
+                    return b === index ?{...a,Count:a.Count - 1}:a
+                })
+                dispatch(vegminusProducts(vegsubPrdts))
+            }
+    }
+
     let add = (index) => {
         if (state.Items[index].Count < 10) {
             const addPrdts = state.Items.map((a, b) => {
@@ -50,12 +78,23 @@ let FavPage = () => {
             } else {
                 alert("Maximum limit reached");
             }
-        };
+    };
+    let vegadd=(index)=>{
+            if(state.vegItems[index].Count < 10){
+                let vegaddPdts =state.vegItems.map((a,b)=>{
+                    return b===index?{...a,Count:a.Count+1}:a
+                })
+                dispatch(vegaddProducts(vegaddPdts))
+            }
+            else{
+                alert("Maximum limit reached")
+            }
+    }
 
     return (
         <div>
-            <div className="row" style={{ backgroundColor: "lightblue" }}>
-                <nav className="d-flex">
+            <div  style={{ backgroundColor: "lightblue" }}>
+                <nav className="d-flex justify-content-center">
                     <h4 className="col-4 col-md-4 col-lg-3 col-xl-3 col-xxl-3 m-2 p-2 d-flex justify-content-center  align-items-center" style={{fontFamily:"monospace",fontWeight:"bold",color:"green",backgroundColor:"lightyellow"}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-cart2" viewBox="0 0 16 16">
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
@@ -94,6 +133,44 @@ let FavPage = () => {
                                     </svg>
                                     :
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-bookmark-fill" viewBox="0 0 16 16" onClick={() => favItems(b)}>
+                                        <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                                    </svg>}
+                            </p>
+                            {a.Visible ?
+                                <div style={{ display: 'flex', marginLeft: "40%", marginBottom: "2%" }}>
+                                    <button className="btn btn-outline-danger" onClick={() => vegminus(b)}>-</button>
+                                    <button className="btn btn-outline-danger">{a.Count}</button>
+                                    <button className="btn btn-outline-danger" onClick={() => vegadd(b)}>+</button>
+                                </div>
+                                :
+                                <button className="btn btn-danger" style={{ marginLeft: "50%", marginBottom: "2%" }} onClick={() => vegChange(b)}>Add</button>
+                            }
+                        </div>
+                    </div>
+                    )
+                    ))}
+                </div>
+            </div>
+            <div className="container">
+            <div className="row">
+                {state.vegItems.map((a, b) => (
+                    a.IsFav && (
+                        <div className="col-10 col-md-5 col-lg-3 col-xl-3 col-xxl-3 m-4 m-md-4 m-lg-3 m-xl-3 " style={{ backgroundColor: "lightYellow", border: "1px solid", height: "100%" }} key={b}>
+                        <div style={{ border: "1px solid", width: "70%", height: "40%", marginLeft: "15%", marginTop: "7%" }}>
+                            <img src={a.Image} style={{ width: "100%", height: "100%" }} alt={a.Name} />
+                        </div>
+                        <p style={{ display: "flex", marginBottom: "1px", marginLeft: "50px", marginTop: "10px" }}>Name:<h5>{a.Name}</h5></p>
+                        <p style={{ display: "flex", marginBottom: "1px", marginLeft: "50px" }}>Kg:<h5>{a.Kg}</h5></p>
+                        <p style={{ display: "flex", marginBottom: "1px", marginLeft: "50px" }}>Price:<h5>{a.Price}</h5></p>
+                        <hr style={{ border: "1px solid" }} />
+                        <div style={{ display: "flex" }}>
+                            <p style={{ marginLeft: "25px" }}>
+                                {a.IsFav ?
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="red" className="bi bi-bookmark-fill" viewBox="0 0 16 16" onClick={() => vegfavItems(b)}>
+                                        <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                                    </svg>
+                                    :
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-bookmark-fill" viewBox="0 0 16 16" onClick={() => vegfavItems(b)}>
                                         <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
                                     </svg>}
                             </p>

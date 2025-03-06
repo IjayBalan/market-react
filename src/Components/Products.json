@@ -8,7 +8,8 @@
         "IsFav":false,
         "IsCart":false,
         "Count":1,
-        "Visible":false
+        "Visible":false,
+        "Type":"fruit"
     },{
         "Name":"Orange",
         "Price":140,
@@ -17,8 +18,8 @@
         "IsFav":false,
         "IsCart":false,
         "Count":1,
-        "Visible":false
-          
+        "Visible":false,
+        "Type":"fruit"
     },{
         "Name":"Banana",
         "Price":90,
@@ -27,7 +28,101 @@
         "IsFav":false,
         "IsCart":false,
         "Count":1,
-        "Visible":false
+        "Visible":false,
+        "Type":"fruit"
+    },{
+        "Name":"strawberry",
+        "Price":250,
+        "Kg":1,
+        "Image":"https://th.bing.com/th/id/OIP.RWNG3aDeaHAJOzRs42MYQAHaHa?rs=1&pid=ImgDetMain",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"fruit"
+    },{
+        "Name":"PineApple",
+        "Price":130,
+        "Kg":1,
+        "Image":"https://img.freepik.com/premium-photo/juicy-pineapple-white-background-isolated_96064-298.jpg?w=2000",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"fruit"
+    },{
+        "Name":"Pomegranate",
+        "Price":160,
+        "Kg":1,
+        "Image":"https://thumbs.dreamstime.com/b/single-ripe-pomegranate-fruit-isolated-white-background-single-ripe-pomegranate-fruit-isolated-white-background-186358897.jpg",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"fruit"
+    }  
+],
+"vegProducts":[
+    {
+        "Name":"Carrot",
+        "Price":50,
+        "Kg":1,
+        "Image":"https://img.freepik.com/premium-photo/carrot-vegetable-with-leaves-isolated-white-background-cutout_272595-91.jpg?w=2000",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
+    },{
+        "Name":"Potato",
+        "Price":40,
+        "Kg":1,
+        "Image":"https://static.vecteezy.com/system/resources/previews/026/695/599/non_2x/potato-on-white-background-generative-ai-photo.jpg",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
+    },{
+        "Name":"Tomato",
+        "Price":70,
+        "Kg":1,
+        "Image":"https://static.vecteezy.com/system/resources/previews/006/596/928/original/fresh-tomatoes-and-sliced-on-a-white-background-illustration-vector.jpg",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
+    },{
+        "Name":"LadiesFinger",
+        "Price":65,
+        "Kg":1,
+        "Image":"https://th.bing.com/th/id/OIP.dCmfj7FYXzLlMe1plCZTVwHaHa?rs=1&pid=ImgDetMain",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
+    },{
+        "Name":"Onion",
+        "Price":80,
+        "Kg":1,
+        "Image":"https://th.bing.com/th/id/OIP.CLRqJEqhLJV-JHKXjOD9lwHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
+    },{
+        "Name":"Brinjal",
+        "Price":55,
+        "Kg":1,
+        "Image":"https://th.bing.com/th/id/OIP.uLWlCjnJEgLnXD_oww1QSQHaHa?w=196&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "IsFav":false,
+        "IsCart":false,
+        "Count":1,
+        "Visible":false,
+        "Type":"vegetable"
     }
 ]
 }
