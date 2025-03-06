@@ -113,6 +113,7 @@ let FavPage = () => {
                     </p>
                 </nav>
             </div>
+            
             <div className="container">
             <div className="row">
                 {state.Items.map((a, b) => (
@@ -151,6 +152,7 @@ let FavPage = () => {
                     ))}
                 </div>
             </div>
+            
             <div className="container">
             <div className="row">
                 {state.vegItems.map((a, b) => (

@@ -111,6 +111,9 @@ let AdminPage = () => {
                 <button className="btn btn-success col-4 col-md-2 col-lg-1 col-xl-1 m-3 mb-0" onClick={update}>Save</button>
                 <p className="col-12" style={{color:"lightgray"}}>(NOTE:"When you click the save button, it will add new products and update existing ones in the list.")</p>
             </div>
+            <div className="row d-flex justify-content-center align-items-center" style={{width:"100%"}}>
+                <h5 className="col-5 col-md-3 col-lg-2 col-xl-1 col-xxl-1 text-center m-2" style={{backgroundColor:"green",color:"white"}}>Fruits</h5>
+            </div>
             <div className="container">
             <div className="row">
                 {state.Items.map((a, b) => {
@@ -129,7 +132,9 @@ let AdminPage = () => {
                 })}
             </div>
             </div>
-
+            <div className="row d-flex justify-content-center align-items-center" style={{width:"100%"}}>
+                <h5 className="col-5 col-md-3 col-lg-2 col-xl-1 col-xxl-1 text-center m-2" style={{backgroundColor:"green",color:"white"}}>Vegetables</h5>
+            </div>
             <div className="container">
             <div className="row">
                 {state.vegItems.map((a, b) => {
